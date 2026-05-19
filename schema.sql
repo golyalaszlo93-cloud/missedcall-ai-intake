@@ -58,3 +58,20 @@ CREATE TABLE IF NOT EXISTS follow_up_tasks (
 
 CREATE INDEX IF NOT EXISTS idx_follow_up_tasks_due_at ON follow_up_tasks(due_at);
 CREATE INDEX IF NOT EXISTS idx_follow_up_tasks_status ON follow_up_tasks(status);
+
+CREATE TABLE IF NOT EXISTS sms_messages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  created_at TEXT NOT NULL,
+  provider TEXT NOT NULL,
+  direction TEXT NOT NULL,
+  from_phone TEXT,
+  to_phone TEXT,
+  body TEXT,
+  provider_message_id TEXT,
+  status TEXT,
+  raw_json TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_sms_messages_created_at ON sms_messages(created_at);
+CREATE INDEX IF NOT EXISTS idx_sms_messages_from_phone ON sms_messages(from_phone);
+CREATE INDEX IF NOT EXISTS idx_sms_messages_direction ON sms_messages(direction);
