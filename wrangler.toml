@@ -1,0 +1,8 @@
+name = "missedcall-ai-intake"
+main = "src/index.js"
+compatibility_date = "2026-05-19"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "missedcall_ai_leads"
+database_id = "29d1a8db-5130-48c5-826f-8c0a189a322a"
